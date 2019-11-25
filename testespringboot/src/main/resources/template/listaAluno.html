@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Alunos</title>
+</head>
+<body>
+
+<table>
+	<tr>	
+		<td>RA</td>
+		<td>Nome</td>
+		<td>Data</td>
+		<td>Apagar</td>
+	</tr>
+	<tr th:each="aluno : ${alunos}" >	
+		<td><span th:text="${aluno.ra}"></span></td>
+		<td><span th:text="${aluno.nome}"></span></td>
+		<td><span th:text="${aluno.data}"></span></td>
+		<td><a th:href="${(#mvc.url('AC#deletarAluno').arg(0,aluno.id)).build()}" > Deletar </a></td>
+	</tr>
+	
+</table>
+
+</body>
+</html>

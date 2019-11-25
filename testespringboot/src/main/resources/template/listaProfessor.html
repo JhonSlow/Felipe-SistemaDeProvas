@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Professores</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td>RP</td>
+        <td>Nome</td>
+        <td>Materia</td>
+        <td>Data</td>
+        <td>Apagar</td>
+    </tr>
+    <tr th:each="professor : ${professores}" >
+        <td><span th:text="${professor.rp}"></span></td>
+        <td><span th:text="${professor.nome}"></span></td>
+        <td><span th:text="${professor.materia}"></span></td>
+        <td><span th:text="${professor.data}"></span></td>
+        <td><a th:href="${(#mvc.url('AC#deletarProfessor').arg(0,professor.id)).build()}" > Deletar </a></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
